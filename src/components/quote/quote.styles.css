@@ -1,0 +1,20 @@
+.quoteBox{
+    
+    height: 90vh;
+     display: flex; 
+    justify-content: center;
+    position: relative;
+    background-color: orange;
+}
+.quote{
+  width: 60%;
+    font-size: x-large;
+    color: black;
+    font-family: 'Brawler', serif;
+    align-self: center;
+    justify-content: center;
+  }
+.author{
+  justify-content: flex-end;
+  align-self:flex-end;
+}
