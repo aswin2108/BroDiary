@@ -1,0 +1,20 @@
+.navigation{
+    width:100%;
+    height:70px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    position: absolute;
+    z-index: 1;
+}
+.link-cont{
+    padding: 25px;
+}
+.logo-link{
+    padding: 25px;
+
+}
+.word-link{
+    padding: 25px;
+    
+}
