@@ -21,8 +21,10 @@ const Header=()=>{
               WORD
             </Link>
             {
-              currentUser ? (
-                <span className="headder-link" onClick={signOutUser}>SIGN OUT</span>)
+              currentUser ? (<div className="DL-cont">
+                <Link className="diary-link" to="/diary">DIARY</Link>
+                <span className="headder-link" onClick={signOutUser}>SIGN OUT</span>
+                </div>)
                 : (<Link className="headder-link" to='/auth'>
                 SIGN IN
               </Link>
