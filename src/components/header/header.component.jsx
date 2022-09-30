@@ -18,7 +18,7 @@ const Header=()=>{
             <Link className="word-link" to='/word'>
               WORD
             </Link>
-            <Link className="signIn-link" to='/sign-in'>
+            <Link className="signIn-link" to='/auth'>
               SIGN IN
             </Link>
             </div>
