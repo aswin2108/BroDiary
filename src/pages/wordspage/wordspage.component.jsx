@@ -1,8 +1,10 @@
 import React from "react";
 
+import Words from "../../components/words/words.component";
+
 const WordsPage=()=>{
     return(
-        <h1>Words page</h1>
+       <Words/>
     );
 }
 

@@ -1,0 +1,10 @@
+.top{
+    display: flex;
+    justify-content: center;
+    height:90vh;
+}
+.word-butt{
+
+    display: flex;
+    justify-items: center;
+}

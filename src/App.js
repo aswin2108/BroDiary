@@ -12,10 +12,10 @@ const App=()=> {
   return (
     <Routes>
      <Route path='/' element={<Header/>}>
-       <Route index path='/' element={<HomePage/> }/>
-       <Route path='/word' element={<WordsPage/> }/>
-       <Route path='/auth' element={<Authentication/>}/>
-       <Route path='/diary' element={<DiaryPage/>}/>
+       <Route index path='/' element={<HomePage /> }/>
+       <Route path='/word' element={<WordsPage /> }/>
+       <Route path='/auth' element={<Authentication />}/>
+       <Route path='/diary' element={<DiaryPage />}/>
       </Route>
     </Routes>
   )
