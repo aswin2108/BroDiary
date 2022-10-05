@@ -1,10 +1,28 @@
-.top{
+.word-top{
     display: flex;
-    justify-content: center;
-    height:90vh;
-}
-.word-butt{
-
-    display: flex;
+    position: relative;
     justify-items: center;
+    height:200vh;
+}
+.word-comp{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height:90vh;
+    width: 100%;
+
+}
+.word{
+    width: 30%;
+    margin-left: 25%;
+    margin-right: 10px;
+    align-self: flex-start;
+    margin-top: 18%;
+    font-size: larger;
+}
+.meaning{
+    width: 70%;
+    margin-right: 10px;
+    margin-left: 30%;
+    font-size: large;
 }

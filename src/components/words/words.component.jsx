@@ -30,11 +30,11 @@ const Words=()=>{
     }, [])
 
     return(
-        <div className="top">
-        <div className="word-butt">
-       <div>{result.word}</div>
-       <div>{result.definition}</div>
-        </div>
+        <div className="word-top">
+           <div className="word-comp">
+              <div className="word"><h1>Word: {result.word}</h1></div>
+              <div className="meaning"><h2>Definition: {result.definition}</h2></div>
+            </div>
         </div>
     );
 };
