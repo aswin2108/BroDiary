@@ -1,4 +1,4 @@
-import SignInForm from "../sign-in-form copy/signinForm.component";
+import SignInForm from "../sign-in-form/signinForm.component";
 import SignUpForm from "../sign-up-form/signupForm.component";
 
 import './suthentication.styles.css'

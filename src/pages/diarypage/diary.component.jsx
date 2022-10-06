@@ -1,9 +1,10 @@
 import React from "react";
 
+import DiaryForm from "../../components/diary-form/diary-form.component";
+
 const DiaryPage=()=>{
     return(
-        <h1>Diary page!</h1>
-        
+        <DiaryForm/>
     );
 }
 
