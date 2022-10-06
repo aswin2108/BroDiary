@@ -80,3 +80,5 @@ export const signOutUser= async ()=>await signOut(auth);
 //observer listener for centralising the auth change
 export const onAuthStateChangedListener=(callback)=>
     onAuthStateChanged(auth, callback)
+
+export const diaryUser=auth;
