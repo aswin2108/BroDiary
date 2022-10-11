@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { useLocation } from "react-router-dom";
 import './history.styles.css';
 import { async } from "@firebase/util";
+import { Card } from "../card/card.component";
 
 const History=()=>{
     
@@ -53,6 +54,13 @@ const History=()=>{
         <div>
            <h1>History page</h1>
            <button onClick={loadPrev}>click</button>
+           <div>
+           {
+             allDocs.map(indDoc=>(
+                <Card key={indDoc.id} indDoc={indDoc} />
+             ))
+           }
+           </div>
         </div>
     )
 }
