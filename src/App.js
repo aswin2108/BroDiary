@@ -5,6 +5,7 @@ import Header from './components/header/header.component';
 import WordsPage from './pages/wordspage/wordspage.component';
 import Authentication from './components/authentication/authentication';
 import DiaryPage from './pages/diarypage/diary.component';
+import HistoryPage from './pages/historypage/historyPage.component';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ const App=()=> {
        <Route path='/word' element={<WordsPage /> }/>
        <Route path='/auth' element={<Authentication />}/>
        <Route path='/diary' element={<DiaryPage />}/>
+       <Route path='/diary/history' element={<HistoryPage />}/>
       </Route>
     </Routes>
   )
