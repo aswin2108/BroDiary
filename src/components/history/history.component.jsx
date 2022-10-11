@@ -44,17 +44,15 @@ const History=()=>{
             return data
         })
          setAllDocs(docs);
-
-          console.log(docs);
         })()
     }
     
     
     return(
         <div>
-           <h1>History page</h1>
-           <button onClick={loadPrev}>click</button>
-           <div>
+           
+           <button  className="diary-history-button" onClick={loadPrev}>Load Previous</button>
+           <div className="entry-list">
            {
              allDocs.map(indDoc=>(
                 <Card key={indDoc.id} indDoc={indDoc} />
