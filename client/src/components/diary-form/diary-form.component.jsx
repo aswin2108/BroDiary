@@ -38,15 +38,27 @@ const DiaryForm=()=>{
 
     const handleAnalyze=async(event)=>{
          event.preventDefault();
-        // const url='https://apis.paralleldots.com/v4/emotion'
-        // axios.post(url, {
-        //     text: 'I had a tooth removal today, it was really painful but got a chance to eat ice cream.',
-        //     api_key: '',
-        //     lang_code: 'pt'
-        // })
-        //   .then(response=>{
-        //     console.log(response.json());
-        //   })
+         const options = {
+            method: 'POST',
+            headers: {
+              accept: 'application/json',
+              'content-type': 'application/json',
+            //   authorization: 'Bearer 
+             },
+            body: JSON.stringify({
+              response_as_dict: true,
+              attributes_as_list: false,
+              show_original_response: false,
+              text: entry,
+              language: 'en',
+              providers: 'amazon'
+            })
+          };
+          
+          fetch('https://api.edenai.run/v2/text/sentiment_analysis', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
     }
 
     return(
