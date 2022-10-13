@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState } from "react";
 import { diaryUser } from "../../firebase/firebase.utils";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -17,6 +17,8 @@ const defaultFormFields={
 const DiaryForm=()=>{
     const [formFields, setFormFields]=useState(defaultFormFields)
     const {date, entry}=formFields;
+    
+    const [sentimentData, setSentiment]=useState("");
 
     const handleChange=(event)=>{
         const {name, value}=event.target ;
@@ -38,12 +40,13 @@ const DiaryForm=()=>{
 
     const handleAnalyze=async(event)=>{
          event.preventDefault();
+        
          const options = {
             method: 'POST',
             headers: {
               accept: 'application/json',
               'content-type': 'application/json',
-            //   authorization: 'Bearer 
+              authorization: `${process.env.REACT_APP_API_KEY}`
              },
             body: JSON.stringify({
               response_as_dict: true,
@@ -54,10 +57,9 @@ const DiaryForm=()=>{
               providers: 'amazon'
             })
           };
-          
           fetch('https://api.edenai.run/v2/text/sentiment_analysis', options)
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => setSentiment(response))
             .catch(err => console.error(err));
     }
 
@@ -77,6 +79,18 @@ const DiaryForm=()=>{
         </div>
       </form>
     </div>
+    {
+        sentimentData?(<div> 
+          <p>Possitive: {sentimentData.amazon.items[0].sentiment_rate}</p>
+          <p>Negative: {sentimentData.amazon.items[1].sentiment_rate}</p>
+          <p>Neutral: {sentimentData.amazon.items[2].sentiment_rate}</p>
+          <p>Mixed: {sentimentData.amazon.items[3].sentiment_rate}</p>
+
+        </div>)
+        : (
+        <p>Do the analysis to view the result</p>
+        )
+    }
     </div>
     )
 }
