@@ -32,7 +32,11 @@ const DiaryForm=()=>{
     const handleSubmit=async(event)=>{
         event.preventDefault();
         await setDoc(doc(db, diaryUser.currentUser.uid, date),{
-            entry:entry
+            entry:entry,
+            possitive: sentimentData.amazon.items[0].sentiment_rate,
+            negative: sentimentData.amazon.items[1].sentiment_rate,
+            neutral: sentimentData.amazon.items[2].sentiment_rate,
+            mixed: sentimentData.amazon.items[3].sentiment_rate
         });
 
          resetFormFields();
@@ -75,7 +79,11 @@ const DiaryForm=()=>{
         <textarea className="entryField" rows='20' placeholder="Diary Entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
         <div className="buttons-container">
             <button className="diary-button" onClick={handleAnalyze}>Analyze</button>
-            <button className="diary-button" type="submit">Save</button>
+            {
+              sentimentData?(
+                <button className="diary-button" type="submit">Save</button>
+                ):(<p>First analyze the entry.</p>)
+            }
         </div>
       </form>
     </div>
@@ -85,7 +93,6 @@ const DiaryForm=()=>{
           <p>Negative: {sentimentData.amazon.items[1].sentiment_rate}</p>
           <p>Neutral: {sentimentData.amazon.items[2].sentiment_rate}</p>
           <p>Mixed: {sentimentData.amazon.items[3].sentiment_rate}</p>
-
         </div>)
         : (
         <p>Do the analysis to view the result</p>
