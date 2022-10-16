@@ -26,8 +26,8 @@ const Header=()=>{
                 <span className="headder-link" onClick={signOutUser}>SIGN OUT</span>
                 </div>)
                 : (<Link className="headder-link" to='/auth'>
-                SIGN IN
-              </Link>
+                      SIGN IN
+                  </Link>
               )
             }
             

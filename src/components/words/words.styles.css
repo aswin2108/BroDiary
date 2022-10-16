@@ -26,3 +26,27 @@
     margin-left: 30%;
     font-size: large;
 }
+@media (max-width:450px){
+    .word-top{
+        height: auto;
+        text-align: center;
+        padding-top: 10%;
+        vertical-align:middle;
+    }
+    .word{
+        font-size: small;
+        width: 90%;
+        padding-left: 10px;
+        margin-left: 0%;
+        margin-right: 0px;
+        padding-top: 30%;
+    }
+    .meaning{
+        font-size: small;
+        width: 90%;
+    }
+    .meaning{
+        margin-right: 0px;
+        margin-left: 5%;
+    }
+}

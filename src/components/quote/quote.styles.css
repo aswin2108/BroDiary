@@ -66,3 +66,30 @@
   box-shadow: none;
   transform: translateY(0);
 }
+
+@media (max-width:450px){
+  .quoteBox{
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .quote{
+    font-size: small;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    }
+  .author{
+    align-self: center;
+    font-size: small;
+  }
+  .quote-button-cont{
+    justify-content: center;
+    width: 50px;
+    /* height: 5px; */
+  }
+  .quote-button{
+    min-height: 40px;
+  }
+}

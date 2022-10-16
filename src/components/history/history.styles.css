@@ -1,7 +1,9 @@
 .entry-list{
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 .diary-history-button {
   appearance: none;
@@ -28,7 +30,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 10%;
+  width: 15%;
   will-change: transform;
 }
 
@@ -46,4 +48,12 @@
 .diary-history-button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+@media (max-width:450px){
+  .entry-list{
+    align-items: flex-start;
+  }
+  .diary-history-button{
+    width: 40%;
+  }
 }

@@ -27,6 +27,7 @@ const DiaryForm=()=>{
 
     const resetFormFields=()=>{
         setFormFields(defaultFormFields);
+        setSentiment("");
     };
 
     const handleSubmit=async(event)=>{
@@ -44,6 +45,10 @@ const DiaryForm=()=>{
 
     const handleAnalyze=async(event)=>{
          event.preventDefault();
+         if(entry===''){
+          alert('Enter contents into the field');
+          return;
+         }
         
          const options = {
             method: 'POST',
@@ -71,7 +76,7 @@ const DiaryForm=()=>{
         <div className="diary-container">
         <div className="diary-title">
         <h2>Enter your diary entry here</h2>
-        <Link className="history-button" to='/diary/history'>History</Link>
+        <Link className="history-button" userid={diaryUser.currentUser} to='/diary/history'>History</Link>
         </div>
       <div className="form-container">
       <form onSubmit={handleSubmit}>

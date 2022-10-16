@@ -85,6 +85,37 @@
     padding: 1rem 2rem;
   }
 }
-/* .buttons-container{
-    display:flex;
-  } */
+@media (max-width:450px){
+  .diary-container{
+    /* margin-left: 2%; */
+    padding-left: 0%;
+    padding-top: 20%;
+    width: 100%;
+    /* margin-right: 2%; */
+  }
+  .diary-title{
+    font-size: smaller;
+    width: 98%;
+    justify-content: flex-start;
+    padding-left: 2%;
+
+  }
+  .dateField{
+    width:30%;
+    margin-left: 2%;
+  }
+  .history-button{
+    justify-content: center;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .entryField{
+    width: 95%;
+    /* margin-right: 2%; */
+    margin-left: 2%;
+    
+  }
+  .buttons-container{
+    width: 100%;
+  }
+}
