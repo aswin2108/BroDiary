@@ -1,4 +1,4 @@
-<h1 align='center'> Upcomming features 😎 </h1>
+<h1 align='center'> Upcoming features 😎 </h1>
 
 ## Medical field
 
