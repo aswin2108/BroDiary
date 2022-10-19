@@ -1,44 +1,16 @@
 import React, {useState, useEffect} from "react";
+
 import { db } from "../../firebase/firebase.utils";
 import { diaryUser } from "../../firebase/firebase.utils";
 import { collection, getDocs } from "firebase/firestore";
-import { useLocation } from "react-router-dom";
-import './history.styles.css';
-import { async } from "@firebase/util";
+
 import Card from "../card/card.component";
 
-const History=(props)=>{
+import './history.styles.css';
+
+const History=()=>{
     
     const [allDocs,setAllDocs]=useState([]);
-    const location=useLocation();
-    // const id= diaryUser.currentUser.uid;
-
-    // useEffect(()=>{
-    //     const id=  diaryUser.currentUser.uid;
-    //     (async()=>{
-           
-    //       const colRef= collection(db, id)
-    //       const snapshots=await getDocs(colRef)
-
-    //       const docs=snapshots.docs.map(doc=> {
-    //         const data=doc.data()
-    //         data.id=doc.id
-    //         return data
-    //     })
-    //     // setAllDocs(docs);
-
-    //       console.log(docs);
-    //     })()
-    // })
-    
-    // const checkUser=()=>{
-    //   if(id!=null){
-    //     loadPrev();
-    //   }
-    //   else{
-    //     checkUser();
-    //   }
-    // }
 
     const loadPrev=()=>{
         (async()=>{
@@ -58,7 +30,6 @@ const History=(props)=>{
     }
 
     useEffect(()=>{
-      // checkUser();
       loadPrev();
   }, [allDocs]);
     

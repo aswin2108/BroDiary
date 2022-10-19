@@ -19,15 +19,15 @@ const Quote=()=>{
 
     return(
     <div className="quoteBox">
-    <div className="quote">
-    <h1>"{quotes.text}"</h1>
-   </div>
-   <div className="author">
-     <h2>:- {quotes.author}</h2>
-   </div>
-   <div className="quote-button-cont">
-       <button className="quote-button"  onClick={getQuote}>next</button>
-       </div>
+        <div className="quote">
+          <h1>"{quotes.text}"</h1>
+        </div>
+        <div className="author">
+          <h2>:- {quotes.author}</h2>
+        </div>
+        <div className="quote-button-cont">
+          <button className="quote-button"  onClick={getQuote}>next</button>
+        </div>
    </div>
     );
 };

@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { diaryUser } from "../../firebase/firebase.utils";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { createUserDocumentFromAuth } from "../../firebase/firebase.utils"; 
-import {db} from '../../firebase/firebase.utils';
 
+import {db} from '../../firebase/firebase.utils';
 import { doc, setDoc } from "firebase/firestore";
+import { diaryUser } from "../../firebase/firebase.utils";
 
 import './diary-form.styles.css';
 
@@ -78,20 +76,20 @@ const DiaryForm=()=>{
         <h2>Enter your diary entry here</h2>
         <Link className="history-button" userid={diaryUser.currentUser} to='/diary/history'>History</Link>
         </div>
-      <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <input className="dateField" type="date" required onChange={handleChange} name='date' value={date} />
-        <textarea className="entryField" rows='20' placeholder="Diary Entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
-        <div className="buttons-container">
-            <button className="diary-button" onClick={handleAnalyze}>Analyze</button>
-            {
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <input className="dateField" type="date" required onChange={handleChange} name='date' value={date} />
+            <textarea className="entryField" rows='20' placeholder="Diary Entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
+            <div className="buttons-container">
+              <button className="diary-button" onClick={handleAnalyze}>Analyze</button>
+             {
               sentimentData?(
                 <button className="diary-button" type="submit">Save</button>
                 ):(<p>First analyze the entry.</p>)
-            }
+             }
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
     {
         sentimentData?(<div> 
           <p>Possitive: {sentimentData.amazon.items[0].sentiment_rate}</p>
@@ -104,6 +102,6 @@ const DiaryForm=()=>{
         )
     }
     </div>
-    )
+    );
 }
 export default DiaryForm;
