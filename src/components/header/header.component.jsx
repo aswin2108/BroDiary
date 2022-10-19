@@ -14,7 +14,7 @@ const Header=()=>{
         <Fragment>
           <div className="navigation">
             <Link className="logo-link" to='/'>
-              BRO DIARY
+              BroDiary
             </Link>
             <div className="link-cont">
             <Link className="headder-link" to='/word'>
