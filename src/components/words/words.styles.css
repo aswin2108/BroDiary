@@ -2,13 +2,13 @@
     display: flex;
     position: relative;
     justify-items: center;
-    height:200vh;
+    /* height:200vh; */
 }
 .word-comp{
     justify-content: center;
     align-items: center;
     position: relative;
-    height:90vh;
+    /* height:90vh; */
     width: 100%;
 
 }

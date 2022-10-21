@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+import {getStorage} from 'firebase/storage';
+
 import {getAuth, 
     signInWithRedirect,
     signInWithPopup, 
@@ -25,7 +27,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const firebaseApp =initializeApp(firebaseConfig);
+
+export const storage=getStorage(firebaseApp);
 
 const provider=new GoogleAuthProvider();
 provider.setCustomParameters({

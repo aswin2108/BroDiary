@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import {db} from '../../firebase/firebase.utils';
 import { doc, setDoc } from "firebase/firestore";
 import { diaryUser } from "../../firebase/firebase.utils";
+import { storage } from "../../firebase/firebase.utils";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import {v4} from 'uuid';
 
 import './diary-form.styles.css';
 
@@ -15,7 +18,8 @@ const defaultFormFields={
 const DiaryForm=()=>{
     const [formFields, setFormFields]=useState(defaultFormFields)
     const {date, entry}=formFields;
-    
+    const [imgUrl, setImgUrl]=useState('');
+    const [imageUpload, setImageUpload]=useState(null);
     const [sentimentData, setSentiment]=useState("");
 
     const handleChange=(event)=>{
@@ -26,20 +30,61 @@ const DiaryForm=()=>{
     const resetFormFields=()=>{
         setFormFields(defaultFormFields);
         setSentiment("");
+        setImageUpload('');
     };
+
+    const uploadImage=()=>{
+      if(imageUpload==null) return;
+      const imageRef=ref(storage,`diaryImage/${imageUpload.name + v4()}`);
+      const uploadTask = uploadBytesResumable(imageRef, imageUpload);
+      uploadTask.on('state_changed', 
+        (snapshot) => { 
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+               case 'paused':
+                   console.log('Upload is paused');
+                   break;
+               case 'running':
+                   console.log('Upload is running');
+                   break;
+               default: console.log('Stopped');
+          }
+      }, 
+      (error) => {
+             // Handle unsuccessful uploads
+             console.log('Error',error);
+          }, 
+      () => {
+           // Handle successful uploads on complete
+          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+              setImgUrl(downloadURL);
+         });
+       }
+      );
+      addToFirestore();
+    }
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
-        await setDoc(doc(db, diaryUser.currentUser.uid, date),{
-            entry:entry,
-            possitive: sentimentData.amazon.items[0].sentiment_rate,
-            negative: sentimentData.amazon.items[1].sentiment_rate,
-            neutral: sentimentData.amazon.items[2].sentiment_rate,
-            mixed: sentimentData.amazon.items[3].sentiment_rate
-        });
+        uploadImage();
+        
 
-         resetFormFields();
+        resetFormFields();
+
     };
+
+    const addToFirestore=async()=>{
+      await setDoc(doc(db, diaryUser.currentUser.uid, date),{
+        entry:entry,
+        imgurl:imgUrl,
+        possitive: sentimentData.amazon.items[0].sentiment_rate,
+        negative: sentimentData.amazon.items[1].sentiment_rate,
+        neutral: sentimentData.amazon.items[2].sentiment_rate,
+        mixed: sentimentData.amazon.items[3].sentiment_rate
+    });
+    }
 
     const handleAnalyze=async(event)=>{
          event.preventDefault();
@@ -80,6 +125,7 @@ const DiaryForm=()=>{
           <form onSubmit={handleSubmit}>
             <input className="dateField" type="date" required onChange={handleChange} name='date' value={date} />
             <textarea className="entryField" rows='20' placeholder="Diary Entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
+            <input className="image-entry" type='file' onChange={(event)=>{setImageUpload(event.target.files[0]);}}/>
             <div className="buttons-container">
               <button className="diary-button" onClick={handleAnalyze}>Analyze</button>
              {
