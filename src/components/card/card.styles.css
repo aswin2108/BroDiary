@@ -38,6 +38,9 @@
     height: 35px;
     will-change: transform;
   }
+  .d-img{
+    width: 70%;
+  }
   
   .delete-history-btn:disabled {
     pointer-events: none;
