@@ -18,7 +18,6 @@ const defaultFormFields={
 const DiaryForm=()=>{
     const [formFields, setFormFields]=useState(defaultFormFields)
     const {date, entry}=formFields;
-    const [imgUrl, setImgUrl]=useState('');
     const [imageUpload, setImageUpload]=useState(null);
     const [sentimentData, setSentiment]=useState("");
 
@@ -59,31 +58,28 @@ const DiaryForm=()=>{
            // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              setImgUrl(downloadURL);
+              addToFirestore(downloadURL)
+              console.log(downloadURL);
          });
        }
       );
-      addToFirestore();
     }
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
         uploadImage();
-        
-
-        resetFormFields();
-
     };
 
-    const addToFirestore=async()=>{
+    const addToFirestore=async(downloadURL)=>{
       await setDoc(doc(db, diaryUser.currentUser.uid, date),{
         entry:entry,
-        imgurl:imgUrl,
+        imgurl:downloadURL,
         possitive: sentimentData.amazon.items[0].sentiment_rate,
         negative: sentimentData.amazon.items[1].sentiment_rate,
         neutral: sentimentData.amazon.items[2].sentiment_rate,
         mixed: sentimentData.amazon.items[3].sentiment_rate
-    });
+      });
+      resetFormFields();
     }
 
     const handleAnalyze=async(event)=>{
