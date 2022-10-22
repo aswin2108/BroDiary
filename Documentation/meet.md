@@ -16,14 +16,15 @@ Demo video: https://youtu.be/sxs5rvCgm58
 
 <h2>Diary Page Before analysis</h2>
 
-![image](https://user-images.githubusercontent.com/72661784/196950713-23ac7cf7-88ed-4c26-ab49-2b09c19e5272.png)
+![image](https://user-images.githubusercontent.com/72661784/197355344-9e7d73ca-457f-4f6b-b81b-7c760e9d7047.png)
 
-<h2>Diary Page After analysis</h2>
+<h2>Diary Page After entries</h2>
 
-![image](https://user-images.githubusercontent.com/72661784/196950432-79f0fe60-0742-4280-9ab9-66a99be8999a.png)
+![image](https://user-images.githubusercontent.com/72661784/197355471-fd994a7a-6195-42b9-90aa-a4ff7bc6d533.png)
 
 <h2>History Page</h2>
 
-![image](https://user-images.githubusercontent.com/72661784/196950632-3a78a4c8-9a6e-4513-a9a8-702363b774f0.png)
+![image](https://user-images.githubusercontent.com/72661784/197356536-fb546dee-bad1-4459-a48a-ac896399741d.png)
+
 
 
