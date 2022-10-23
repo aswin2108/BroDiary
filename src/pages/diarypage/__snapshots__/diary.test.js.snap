@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiaryPage page rendered correctly 1`] = `
+<div>
+  <div
+    className="diary-container"
+  >
+    <div
+      className="diary-title"
+    >
+      <h2>
+        Enter your diary entry here
+      </h2>
+      <a
+        className="history-button"
+        href="/diary/history"
+        onClick={[Function]}
+      >
+        History
+      </a>
+    </div>
+    <div
+      className="form-container"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          className="dateField"
+          name="date"
+          onChange={[Function]}
+          required={true}
+          type="date"
+          value=""
+        />
+        <textarea
+          className="entryField"
+          name="entry"
+          onChange={[Function]}
+          placeholder="Diary Entry"
+          required={true}
+          rows="20"
+          type="text"
+          value=""
+        />
+        <input
+          className="image-entry"
+          onChange={[Function]}
+          type="file"
+        />
+        <div
+          className="buttons-container"
+        >
+          <button
+            className="diary-button"
+            onClick={[Function]}
+          >
+            Analyze
+          </button>
+          <p>
+            First analyze the entry.
+          </p>
+        </div>
+      </form>
+    </div>
+    <p>
+      Do the analysis to view the result
+    </p>
+  </div>
+</div>
+`;

@@ -115,7 +115,7 @@ const DiaryForm=()=>{
         <div className="diary-container">
         <div className="diary-title">
         <h2>Enter your diary entry here</h2>
-        <Link className="history-button" userid={diaryUser.currentUser} to='/diary/history'>History</Link>
+        <Link className="history-button" to='/diary/history'>History</Link>
         </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>

@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication page rendered correctly 1`] = `
+<div
+  className="authentication-container"
+>
+  <div
+    className="sign-up-container"
+  >
+    <h2
+      className="sign-up-title"
+    >
+      Already have an account?
+    </h2>
+    <span>
+      Sign in with your email and password
+    </span>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="group"
+      >
+        <input
+          className="form-input"
+          name="email"
+          onChange={[Function]}
+          required={true}
+          type="email"
+          value=""
+        />
+        <label
+          className="
+                  form-input-label"
+        >
+          Email
+        </label>
+      </div>
+      <div
+        className="group"
+      >
+        <input
+          className="form-input"
+          name="password"
+          onChange={[Function]}
+          required={true}
+          type="password"
+          value=""
+        />
+        <label
+          className="
+                  form-input-label"
+        >
+          Password
+        </label>
+      </div>
+      <div
+        className="buttons-container"
+      >
+        <button
+          className="sign-up-button"
+          type="submit"
+        >
+          Sign In
+        </button>
+        <button
+          className="sign-up-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Google Sign In
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    className="sign-up-container"
+  >
+    <h2
+      className="sign-up-title"
+    >
+      Don't have an account?
+    </h2>
+    <span>
+      Sign up with your email and password
+    </span>
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="group"
+      >
+        <input
+          className="form-input"
+          name="displayName"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+        <label
+          className="
+                  form-input-label"
+        >
+          Display Name
+        </label>
+      </div>
+      <div
+        className="group"
+      >
+        <input
+          className="form-input"
+          name="email"
+          onChange={[Function]}
+          required={true}
+          type="email"
+          value=""
+        />
+        <label
+          className="
+                  form-input-label"
+        >
+          Email
+        </label>
+      </div>
+      <div
+        className="group"
+      >
+        <input
+          className="form-input"
+          name="password"
+          onChange={[Function]}
+          required={true}
+          type="password"
+          value=""
+        />
+        <label
+          className="
+                  form-input-label"
+        >
+          Password
+        </label>
+      </div>
+      <div
+        className="group"
+      >
+        <input
+          className="form-input"
+          name="confirmPassword"
+          onChange={[Function]}
+          required={true}
+          type="password"
+          value=""
+        />
+        <label
+          className="
+                  form-input-label"
+        >
+          Confirm Password
+        </label>
+      </div>
+      <button
+        className="sign-up-button"
+        type="submit"
+      >
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>
+`;

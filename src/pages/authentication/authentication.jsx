@@ -1,7 +1,7 @@
-import SignInForm from "../sign-in-form/signinForm.component";
-import SignUpForm from "../sign-up-form/signupForm.component";
+import SignInForm from "../../components/sign-in-form/signinForm.component";
+import SignUpForm from "../../components/sign-up-form/signupForm.component";
 
-import './suthentication.styles.css'
+import './authentication.styles.css'
 
 const Authentication=()=>{  
     return(

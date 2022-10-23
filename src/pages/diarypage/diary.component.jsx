@@ -4,7 +4,9 @@ import DiaryForm from "../../components/diary-form/diary-form.component";
 
 const DiaryPage=()=>{
     return(
-        <DiaryForm/>
+        <div>
+            <DiaryForm/>
+        </div>
     );
 }
 

@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
 import WordsPage from './pages/wordspage/wordspage.component';
-import Authentication from './components/authentication/authentication';
+import Authentication from './pages/authentication/authentication';
 import DiaryPage from './pages/diarypage/diary.component';
 import HistoryPage from './pages/historypage/historyPage.component';
 

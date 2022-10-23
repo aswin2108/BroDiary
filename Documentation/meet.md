@@ -1,6 +1,6 @@
 <h1 align='center'> Meet BroDiary 🤝🏻 </h1>
 
-Demo video: https://youtu.be/sxs5rvCgm58
+Demo video: https://youtu.be/BzUEB-9xqi8
 
 <h2>Home Page</h2>
 
