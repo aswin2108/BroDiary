@@ -26,6 +26,7 @@ exports[`DiaryPage page rendered correctly 1`] = `
         onSubmit={[Function]}
       >
         <input
+          aria-label="date"
           className="dateField"
           name="date"
           onChange={[Function]}
@@ -34,6 +35,7 @@ exports[`DiaryPage page rendered correctly 1`] = `
           value=""
         />
         <textarea
+          aria-label="entry"
           className="entryField"
           name="entry"
           onChange={[Function]}
@@ -53,6 +55,7 @@ exports[`DiaryPage page rendered correctly 1`] = `
         >
           <button
             className="diary-button"
+            name="analyzeBtn"
             onClick={[Function]}
           >
             Analyze

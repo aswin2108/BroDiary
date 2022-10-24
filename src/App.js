@@ -11,15 +11,16 @@ import './App.css';
 
 const App=()=> {
   return (
+    <div>
+    <Header />
     <Routes>
-     <Route path='/' element={<Header/>}>
        <Route index path='/' element={<HomePage /> }/>
        <Route path='/word' element={<WordsPage /> }/>
        <Route path='/auth' element={<Authentication />}/>
        <Route path='/diary' element={<DiaryPage />}/>
        <Route path='/diary/history' element={<HistoryPage />}/>
-      </Route>
     </Routes>
+    </div>
   )
 }
 

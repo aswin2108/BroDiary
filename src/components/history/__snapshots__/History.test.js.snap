@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card  rendered correctly 1`] = `
+<div>
+  <button
+    className="diary-history-button"
+    onClick={[Function]}
+  >
+    Load Previous
+  </button>
+  <div
+    className="entry-list"
+  />
+</div>
+`;

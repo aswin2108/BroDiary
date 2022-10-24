@@ -1,5 +1,5 @@
-import { Fragment, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import {  useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
 
@@ -11,7 +11,6 @@ const Header=()=>{
   const {currentUser}=useContext(UserContext);
 
     return(
-        <Fragment>
           <div className="navigation">
             <Link className="logo-link" to='/'>
               BroDiary
@@ -33,8 +32,6 @@ const Header=()=>{
             
             </div>
           </div>
-          <Outlet/>
-        </Fragment>
     );
 }
 

@@ -119,11 +119,11 @@ const DiaryForm=()=>{
         </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
-            <input className="dateField" type="date" required onChange={handleChange} name='date' value={date} />
-            <textarea className="entryField" rows='20' placeholder="Diary Entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
+            <input className="dateField" type="date" required aria-label="date" onChange={handleChange} name='date' value={date} />
+            <textarea className="entryField" rows='20' placeholder="Diary Entry" aria-label="entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
             <input className="image-entry" type='file' onChange={(event)=>{setImageUpload(event.target.files[0]);}}/>
             <div className="buttons-container">
-              <button className="diary-button" onClick={handleAnalyze}>Analyze</button>
+              <button className="diary-button" name="analyzeBtn" onClick={handleAnalyze}>Analyze</button>
              {
               sentimentData?(
                 <button className="diary-button" type="submit">Save</button>

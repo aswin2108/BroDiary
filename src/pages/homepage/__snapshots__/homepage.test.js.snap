@@ -7,7 +7,9 @@ exports[`Home page rendered correctly 1`] = `
   <div
     className="quote"
   >
-    <h1>
+    <h1
+      aria-label="quote"
+    >
       "
       "
     </h1>
@@ -15,7 +17,9 @@ exports[`Home page rendered correctly 1`] = `
   <div
     className="author"
   >
-    <h2>
+    <h2
+      aria-label="author"
+    >
       :- 
     </h2>
   </div>
