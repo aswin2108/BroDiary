@@ -16,9 +16,6 @@ const Header=()=>{
               BroDiary
             </Link>
             <div className="link-cont">
-            <Link className="headder-link" to='/word'>
-              WORD
-            </Link>
             {
               currentUser ? (<div className="DL-cont">
                 <Link className="diary-link" to="/diary">DIARY</Link>
