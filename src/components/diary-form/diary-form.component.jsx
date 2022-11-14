@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 import {db} from '../../firebase/firebase.utils';
 import { doc, setDoc } from "firebase/firestore";
-import { diaryUser } from "../../firebase/firebase.utils";
 import { storage } from "../../firebase/firebase.utils";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import {v4} from 'uuid';
+
+import {  useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
 
 import './diary-form.styles.css';
 
@@ -16,6 +18,7 @@ const defaultFormFields={
 }
 
 const DiaryForm=()=>{
+    const {currentUser}=useContext(UserContext);
     const [formFields, setFormFields]=useState(defaultFormFields)
     const {date, entry}=formFields;
     const [imageUpload, setImageUpload]=useState(null);
@@ -71,7 +74,7 @@ const DiaryForm=()=>{
     };
 
     const addToFirestore=async(downloadURL)=>{
-      await setDoc(doc(db, diaryUser.currentUser.uid, date),{
+      await setDoc(doc(db, currentUser.uid, date),{
         entry:entry,
         imgurl:downloadURL,
         possitive: sentimentData.amazon.items[0].sentiment_rate,

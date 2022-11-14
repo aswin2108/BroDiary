@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import { db } from "../../firebase/firebase.utils";
-import { diaryUser } from "../../firebase/firebase.utils";
+import { auth, db } from "../../firebase/firebase.utils";
 import { collection, getDocs } from "firebase/firestore";
 
 import Card from "../card/card.component";
@@ -9,13 +8,13 @@ import Card from "../card/card.component";
 import './history.styles.css';
 
 const History=()=>{
-    
     const [allDocs,setAllDocs]=useState([]);
 
-    const loadPrev=()=>{
+    const loadPrev=auth.onAuthStateChanged((authObj)=>{
+      if(authObj){
         (async()=>{
            
-          const id=  diaryUser.currentUser.uid;
+          const id = authObj.uid;
           
           const colRef= collection(db, id)
           const snapshots=await getDocs(colRef)
@@ -27,7 +26,8 @@ const History=()=>{
         })
          setAllDocs(docs);
         })()
-    }
+      }
+    })
 
     useEffect(()=>{
       loadPrev();
@@ -35,16 +35,14 @@ const History=()=>{
     
     
     return(
-        <div>
-        <button  className="diary-history-button" onClick={loadPrev}>Load Previous</button>
-           <div className="entry-list">
+      <div className="entry-list">
            {
              allDocs.map(indDoc=>(
                 <Card key={indDoc.id} indDoc={indDoc} />
              ))
            }
-           </div>
-        </div>
+      </div>
+        
     )
 }
 

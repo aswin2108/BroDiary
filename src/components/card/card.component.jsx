@@ -2,14 +2,16 @@ import React from "react";
 
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase.utils";
-import { diaryUser } from "../../firebase/firebase.utils";
+import {  useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
 
 import './card.styles.css'; 
 
 const Card=(props)=>{
+  const {currentUser}=useContext(UserContext);
     const deleteEntry=async(event)=>{
         event.preventDefault();
-        await deleteDoc(doc(db, diaryUser.currentUser.uid, props.indDoc.id));
+        await deleteDoc(doc(db, currentUser.uid, props.indDoc.id));
     }
     return(
     <div className="card-container">
