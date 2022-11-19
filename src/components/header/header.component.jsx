@@ -26,7 +26,7 @@ function ShowLinks(){
         {
           currentUser ? (<div className="DL-cont">
               <Link className="diary-link" to="/diary">DIARY</Link>
-              <span className="headder-link" onClick={signOutUser}>SIGN OUT</span>
+              <Link className="headder-link" to="/" onClick={signOutUser}>SIGN OUT</Link>
              </div>)
             : (<Link className="headder-link" to='/auth'>
                  SIGN IN
