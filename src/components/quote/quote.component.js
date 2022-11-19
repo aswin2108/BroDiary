@@ -1,21 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+
+import useFetchQuote from "../../Hooks/useFetchQuote";
 
 import './quote.styles.css';
 
 const Quote=()=>{
-    const [quotes, setQuotes] =useState("");
-    const getQuote=()=>{
-        fetch("https://type.fit/api/quotes")
-            .then((res)=>res.json())
-            .then((data)=>{
-                let randomNum=Math.floor(Math.random()*data.length);
-                setQuotes(data[randomNum]);
-            })
-    }
 
-    useEffect(()=>{
-        getQuote();
-    }, []);
+    const quotes=useFetchQuote();
 
     return(
     <div className="quoteBox">
@@ -25,9 +16,7 @@ const Quote=()=>{
         <div className="author">
           <h2 aria-label="author">:- {quotes.author}</h2>
         </div>
-        <div className="quote-button-cont">
-          <button className="quote-button"  onClick={getQuote}>next</button>
-        </div>
+        
    </div>
     );
 };
