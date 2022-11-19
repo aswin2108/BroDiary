@@ -12,9 +12,12 @@
     display: flex;
 }
 .logo-link{
-    padding: 25px;
+    padding: 20px;
     font-weight: 800;
-    font-size: large;
+    font-size: 35px;
+    font-family: 'Brawler', serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Rubik Microbe', cursive;
 }
 .headder-link{
     padding: 25px;
