@@ -2,7 +2,6 @@ import {  useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
-
 import { signOutUser } from "../../firebase/firebase.utils";
 
 import './header.styles.css'

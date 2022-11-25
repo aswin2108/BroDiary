@@ -1,47 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 
-import { auth, db } from "../../firebase/firebase.utils";
-import { collection, getDocs } from "firebase/firestore";
+import useGetHistory from "../../Hooks/useGetHistory";
 
 import Card from "../card/card.component";
 
 import './history.styles.css';
 
 const History=()=>{
-    const [allDocs,setAllDocs]=useState([]);
+  const allDocs=useGetHistory();
 
-    const loadPrev=auth.onAuthStateChanged((authObj)=>{
-      if(authObj){
-        (async()=>{
-           
-          const id = authObj.uid;
-          
-          const colRef= collection(db, id)
-          const snapshots=await getDocs(colRef)
-
-          const docs=snapshots.docs.map(doc=> {
-            const data=doc.data()
-            data.id=doc.id
-            return data
-        })
-         setAllDocs(docs);
-        })()
+  return(
+    <div className="entry-list">
+       { allDocs===[] ?  (<span>no entries found</span> ):
+          (allDocs.map(indDoc=>(
+             <Card key={indDoc.id} indDoc={indDoc} />
+          )))
       }
-    })
-
-    useEffect(()=>{
-      loadPrev();
-  }, [allDocs]);
-    
-    
-    return(
-      <div className="entry-list">
-           {
-             allDocs.map(indDoc=>(
-                <Card key={indDoc.id} indDoc={indDoc} />
-             ))
-           }
-      </div>
+    </div>
         
     )
 }

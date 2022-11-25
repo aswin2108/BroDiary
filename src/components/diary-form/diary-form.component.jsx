@@ -36,7 +36,6 @@ const DiaryForm=()=>{
     };
 
     const uploadImage=()=>{
-      if(imageUpload==null) return;
       const imageRef=ref(storage,`diaryImage/${imageUpload.name + v4()}`);
       const uploadTask = uploadBytesResumable(imageRef, imageUpload);
       uploadTask.on('state_changed', 
@@ -70,7 +69,11 @@ const DiaryForm=()=>{
 
     const handleSubmit=async(event)=>{
         event.preventDefault();
-        uploadImage();
+        imageUpload===null?(
+          addToFirestore('')
+      ):(
+          uploadImage() 
+      )
     };
 
     const addToFirestore=async(downloadURL)=>{
