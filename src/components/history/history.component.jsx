@@ -11,7 +11,7 @@ const History=()=>{
 
   return(
     <div className="entry-list">
-       { allDocs===[] ?  (<span>no entries found</span> ):
+       { allDocs.length===0 ? (<span>no entries found</span> ): 
           (allDocs.map(indDoc=>(
              <Card key={indDoc.id} indDoc={indDoc} />
           )))
