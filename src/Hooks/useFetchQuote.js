@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 
-export default function useFetchQuote(){
+const useFetchQuote=()=>{
     const [quote, setQuote]=useState("");
-    const getQuote=()=>{
-        fetch("https://type.fit/api/quotes")
-            .then((res)=>res.json())
-            .then((data)=>{
-                let randomNum=Math.floor(Math.random()*data.length);
-                setQuote(data[randomNum]);
-            })
-    }
+    const getQuote=async()=>{
+            await fetch("https://type.fit/api/quotes")
+               .then((res)=>res.json())
+               .then((data)=>{
+                    let randomNum=Math.floor(Math.random()*data.length);
+                    setQuote(data[randomNum]);
+                })
+                .catch(err => console.error(err));
+            }
     useEffect(()=>{
-            getQuote();
+        getQuote();
     }, []);
-
-    return quote;
+   return quote;
 }
+
+export default useFetchQuote;

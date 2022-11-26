@@ -1,12 +1,18 @@
 import React from "react";
 
-import useFetchQuote from "../../Hooks/useFetchQuote";
+import useGetQuote from "../../Hooks/useFetchQuote";
+
+import Spinner from "../spinner/spinner.component";
 
 import './quote.styles.css';
 
 const Quote=()=>{
 
-    const quotes=useFetchQuote();
+    const quotes=useGetQuote();
+
+    if(quotes===""){
+      return <Spinner loading/>
+    }
 
     return(
     <div className="quoteBox">
