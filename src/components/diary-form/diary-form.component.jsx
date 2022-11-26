@@ -32,9 +32,7 @@ const DiaryForm=()=>{
     const {sentimentData, handleAnalyze, clearSentiment, isLoading}=useAnalyzeSentiment();
     
     if(isLoading){
-      return <Spinner
-      loading={isLoading}
-      />
+      return <Spinner loading={isLoading}/>
     }
 
     const handleChange=(event)=>{

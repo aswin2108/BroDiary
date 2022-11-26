@@ -5,12 +5,11 @@ const useAnalyzeSentiment=()=>{
     const [isLoading, setIsLoading] = useState(false);
 
     const handleAnalyze=async(entry)=>{
-        setIsLoading(true)
         if(entry===''){
             alert('Enter contents into the field');
             return;
            }
-          
+           setIsLoading(true)
            const options = {
               method: 'POST',
               headers: {
