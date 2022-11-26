@@ -1,6 +1,6 @@
 import React from "react";
 
-import { deleteEntryTest } from "../Helpers/utils";
+import { deleteEntryTest } from "../../Helpers/historyUtils";
 
 import './card.styles.css'; 
 

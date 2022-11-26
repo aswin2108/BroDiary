@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Sentiment from "../sentiment/sentimentData.component"; 
+
 import {db} from '../../firebase/firebase.utils';
 import { doc, setDoc } from "firebase/firestore";
 import { storage } from "../../firebase/firebase.utils";
@@ -12,17 +14,28 @@ import { UserContext } from "../../contexts/user.context";
 
 import './diary-form.styles.css';
 
+import useAnalyzeSentiment from "../../Hooks/useGetSentiment";
+
+import Spinner from "../spinner/spinner.component";
+
 const defaultFormFields={
     date:'',
     entry:''
 }
 
 const DiaryForm=()=>{
-    const {currentUser}=useContext(UserContext);
     const [formFields, setFormFields]=useState(defaultFormFields)
     const {date, entry}=formFields;
     const [imageUpload, setImageUpload]=useState(null);
-    const [sentimentData, setSentiment]=useState("");
+
+    const {currentUser}=useContext(UserContext);
+    const {sentimentData, handleAnalyze, clearSentiment, isLoading}=useAnalyzeSentiment();
+    
+    if(isLoading){
+      return <Spinner
+      loading={isLoading}
+      />
+    }
 
     const handleChange=(event)=>{
         const {name, value}=event.target ;
@@ -31,7 +44,7 @@ const DiaryForm=()=>{
 
     const resetFormFields=()=>{
         setFormFields(defaultFormFields);
-        setSentiment("");
+        clearSentiment();
         setImageUpload('');
     };
 
@@ -88,35 +101,6 @@ const DiaryForm=()=>{
       resetFormFields();
     }
 
-    const handleAnalyze=async(event)=>{
-         event.preventDefault();
-         if(entry===''){
-          alert('Enter contents into the field');
-          return;
-         }
-        
-         const options = {
-            method: 'POST',
-            headers: {
-              accept: 'application/json',
-              'content-type': 'application/json',
-              authorization: `${process.env.REACT_APP_API_KEY}`
-             },
-            body: JSON.stringify({
-              response_as_dict: true,
-              attributes_as_list: false,
-              show_original_response: false,
-              text: entry,
-              language: 'en',
-              providers: 'amazon'
-            })
-          };
-          fetch('https://api.edenai.run/v2/text/sentiment_analysis', options)
-            .then(response => response.json())
-            .then(response => setSentiment(response))
-            .catch(err => console.error(err));
-    }
-
     return(
         <div className="diary-container">
         <div className="diary-title">
@@ -129,7 +113,7 @@ const DiaryForm=()=>{
             <textarea className="entryField" rows='20' placeholder="Diary Entry" aria-label="entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
             <input className="image-entry" type='file' onChange={(event)=>{setImageUpload(event.target.files[0]);}}/>
             <div className="buttons-container">
-              <button className="diary-button" name="analyzeBtn" onClick={handleAnalyze}>Analyze</button>
+              <button className="diary-button" type="button" name="analyzeBtn" onClick={()=>{handleAnalyze(entry)}}>Analyze</button>
              {
               sentimentData?(
                 <button className="diary-button" type="submit">Save</button>
@@ -139,15 +123,11 @@ const DiaryForm=()=>{
           </form>
         </div>
     {
-        sentimentData?(<div> 
-          <p>Possitive: {sentimentData.amazon.items[0].sentiment_rate}</p>
-          <p>Negative: {sentimentData.amazon.items[1].sentiment_rate}</p>
-          <p>Neutral: {sentimentData.amazon.items[2].sentiment_rate}</p>
-          <p>Mixed: {sentimentData.amazon.items[3].sentiment_rate}</p>
-        </div>)
-        : (
-        <p>Do the analysis to view the result</p>
-        )
+        sentimentData?(
+             <Sentiment {...sentimentData.amazon.items}/>
+             ): (
+                  <p>Do the analysis to view the result</p>
+                )
     }
     </div>
     );
