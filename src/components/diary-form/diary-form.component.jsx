@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Sentiment from "../sentiment/sentimentData.component"; 
+import Sentiment from "../sentiment/sentimentData.component";
+import Greeting from "../diaryGreeting/diaryGreeting.component"; 
+import CustomButton from "../button/button.component";
 
 import {db} from '../../firebase/firebase.utils';
 import { doc, setDoc } from "firebase/firestore";
@@ -29,10 +31,10 @@ const DiaryForm=()=>{
     const [imageUpload, setImageUpload]=useState(null);
 
     const {currentUser}=useContext(UserContext);
-    const {sentimentData, handleAnalyze, clearSentiment, isLoading}=useAnalyzeSentiment();
-    
-    if(isLoading){
-      return <Spinner loading={isLoading}/>
+    const {sentimentData, handleAnalyze, clearSentiment, isSentimentLoading}=useAnalyzeSentiment();
+  
+    if(isSentimentLoading){
+      return <Spinner loading={isSentimentLoading}/>
     }
 
     const handleChange=(event)=>{
@@ -102,8 +104,8 @@ const DiaryForm=()=>{
     return(
         <div className="diary-container">
         <div className="diary-title">
-        <h2>Enter your diary entry here</h2>
-        <Link className="history-button" to='/diary/history'>History</Link>
+          <Greeting/>
+          <Link className="history-button" to='/diary/history'>History📜</Link>
         </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
@@ -111,22 +113,22 @@ const DiaryForm=()=>{
             <textarea className="entryField" rows='20' placeholder="Diary Entry" aria-label="entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
             <input className="image-entry" type='file' onChange={(event)=>{setImageUpload(event.target.files[0]);}}/>
             <div className="buttons-container">
-              <button className="diary-button" type="button" name="analyzeBtn" onClick={()=>{handleAnalyze(entry)}}>Analyze</button>
+              <CustomButton type="button" name="analyzeBtn" onClick={()=>{handleAnalyze(entry)}}>Analyze</CustomButton>
              {
               sentimentData?(
-                <button className="diary-button" type="submit">Save</button>
+                  <CustomButton type="submit">Save</CustomButton>
                 ):(<p>First analyze the entry.</p>)
              }
             </div>
           </form>
         </div>
-    {
+     {
         sentimentData?(
              <Sentiment {...sentimentData.amazon.items}/>
              ): (
                   <p>Do the analysis to view the result</p>
                 )
-    }
+     }
     </div>
     );
 }

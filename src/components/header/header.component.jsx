@@ -11,7 +11,7 @@ const Header=()=>{
   return(
       <div className="navigation">
         <Link className="logo-link" to='/'>
-          BroDiary
+          BroDiary📖
         </Link>
         <ShowLinks/>
       </div>

@@ -9,7 +9,7 @@ import './quote.styles.css';
 const Quote=()=>{
 
     const quotes=useGetQuote();
-
+    // quotes.text=`"`+quotes.text+`"`;
     if(quotes===""){
       return <Spinner loading/>
     }

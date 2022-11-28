@@ -5,17 +5,20 @@ import { onAuthStateChangedListener, createUserDocumentFromAuth } from "../fireb
 export const UserContext=createContext({
     currentUser:null,
     setCurrentUser:()=>null,
+    isLoading:true,
 })
 
 export const UserProvider=({children})=>{
     const [currentUser, setCurrentUser]=useState(null);
-    const value={currentUser,setCurrentUser};
+    const [isLoading, setIsLoading]=useState(true);
+    const value={currentUser,setCurrentUser, isLoading};
     useEffect(()=>{
         const unsubscribe= onAuthStateChangedListener((user)=>{
             if(user){
               createUserDocumentFromAuth(user);
             }
             setCurrentUser(user);
+            setIsLoading(false);
         });
         return unsubscribe
     },[]);
