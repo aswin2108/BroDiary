@@ -2,12 +2,12 @@ import React from "react";
 import { render} from "@testing-library/react";
 import { screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import DiaryForm from "./diary-form.component";
+import Diary from "./diary-form.component";
 
 
 render(
     <MemoryRouter>
-        <DiaryForm />
+        <Diary />
     </MemoryRouter>
     );
 const dateinput= screen.getByLabelText('date')

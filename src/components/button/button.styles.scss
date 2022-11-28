@@ -1,63 +1,60 @@
 .button-container {
-    min-width: 165px;
-    width: auto;
-    height: 50px;
-    letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
-    background-color: black;
-    color: white;
-    text-transform: uppercase;
-    border-radius: 1.5rem;
-    font-family: 'Open Sans Condensed';
-    font-weight: bolder;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-  
-    &:hover {
-      background-color: white;
-      color: black;
-      border: 1px solid black;
-    }
-  
-    &.google-sign-in {
-      background-color: #4285f4;
-      color: white;
-  
-      &:hover {
-        background-color: #357ae8;
-        border: none;
-      }
-    }
-  
-    &.smallInverted {
-      background-color: white;
-      color: black;
-      border: 1px solid black;
-      font-size: small;
-      text-transform:capitalize;
-      height: 30px;
-      margin: 10px;
-      margin-left: 0px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-      align-items: center;
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 1.5rem;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
 
-  
-      &:hover {
-        background-color: black;
-        color: white;
-        border: none;
-      }
-    }
-    @media (min-width: 768px) {
-        .button-container {
-          font-size: 1.125rem;
-          padding: 1rem 2rem;
-        }
-      }
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
   }
-  
-  
+
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: white;
+
+    &:hover {
+      background-color: #357ae8;
+      border: none;
+    }
+  }
+
+  &.smallInverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    font-size: small;
+    text-transform: capitalize;
+    height: 30px;
+    margin: 10px;
+    margin-left: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+    align-items: center;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .button-container {
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 export default function useGetHistory(){
     const [allDocs,setAllDocs]=useState([]);
+    const [isHistoryLoading, setHistoryLoading]=useState(true);
 
     useEffect(()=>{auth.onAuthStateChanged((authObj)=>{
         if(authObj){
@@ -21,10 +22,11 @@ export default function useGetHistory(){
               return data
           })
           setAllDocs(docs);
+          setHistoryLoading(false);
           })()
         }
       })
   }, [allDocs]);
 
-  return allDocs
+  return {allDocs, isHistoryLoading};
 }
