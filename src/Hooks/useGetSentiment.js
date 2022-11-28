@@ -2,14 +2,14 @@ import { useState} from "react";
 
 const useAnalyzeSentiment=()=>{
     const [sentimentData, setSentiment]=useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    const [isSentimentLoading, setIsSentimentLoading] = useState(false);
 
     const handleAnalyze=async(entry)=>{
         if(entry===''){
             alert('Enter contents into the field');
             return;
            }
-           setIsLoading(true)
+           setIsSentimentLoading(true)
            const options = {
               method: 'POST',
               headers: {
@@ -30,13 +30,13 @@ const useAnalyzeSentiment=()=>{
               .then(response => response.json())
               .then(response=>{
                         setSentiment(response)
-                        setIsLoading(false)
+                        setIsSentimentLoading(false)
                     })
               .catch(err => console.error(err));
     }
     const clearSentiment=()=>{
         setSentiment("")
     }
-    return {sentimentData, handleAnalyze, clearSentiment, isLoading}
+    return {sentimentData, handleAnalyze, clearSentiment, isSentimentLoading}
 }
 export default useAnalyzeSentiment

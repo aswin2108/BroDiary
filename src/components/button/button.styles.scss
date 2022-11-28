@@ -33,10 +33,18 @@
       }
     }
   
-    &.inverted {
+    &.smallInverted {
       background-color: white;
       color: black;
       border: 1px solid black;
+      font-size: small;
+      text-transform:capitalize;
+      height: 30px;
+      margin: 10px;
+      margin-left: 0px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      align-items: center;
+
   
       &:hover {
         background-color: black;

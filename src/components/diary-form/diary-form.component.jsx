@@ -111,7 +111,12 @@ const DiaryForm=()=>{
           <form onSubmit={handleSubmit}>
             <input className="dateField" type="date" required aria-label="date" onChange={handleChange} name='date' value={date} />
             <textarea className="entryField" rows='20' placeholder="Diary Entry" aria-label="entry" type="text" required onChange={handleChange} name='entry' value={entry}/>
-            <input className="image-entry" type='file' onChange={(event)=>{setImageUpload(event.target.files[0]);}}/>
+            {imageUpload ?(
+                <CustomButton buttonType='smallInverted' onClick={()=>{setImageUpload(null)}}>Reset Image</CustomButton>
+                ):(
+                    <input className="image-entry" type='file' onChange={(event)=>{setImageUpload(event.target.files[0]);
+                                                                                    event.target.value=''}}/>
+                  )}
             <div className="buttons-container">
               <CustomButton type="button" name="analyzeBtn" onClick={()=>{handleAnalyze(entry)}}>Analyze</CustomButton>
              {
