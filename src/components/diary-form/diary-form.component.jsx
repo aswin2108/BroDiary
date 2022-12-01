@@ -122,8 +122,10 @@ const Diary = () => {
         </form>
       </div>
       {sentimentData ? (
-        <Sentiment {...sentimentData.amazon.items} />
+        // console.log(sentimentData.amazon)
+        <Sentiment {...sentimentData.amazon} />
       ) : (
+        // <Sentiment {...sentimentData.amazon} />
         <p>Do the analysis to view the result</p>
       )}
     </div>

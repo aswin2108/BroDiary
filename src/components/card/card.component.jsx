@@ -1,10 +1,14 @@
 import React from "react";
 
-import { deleteEntryTest } from "../../Helpers/historyUtils";
+// import { deleteEntryTest } from "../../Helpers/historyUtils";
+import useGetHistory from "../../Hooks/useGetHistory";
+import Sentiment from "../sentiment/sentimentData.component";
 
 import "./card.styles.css";
 
 const Card = (props) => {
+  const { deleteEntryTest } = useGetHistory();
+
   return (
     <div className="card-container">
       <div className="history-card-header">
@@ -17,10 +21,7 @@ const Card = (props) => {
         </button>
       </div>
       <p>{props.indDoc.entry}</p>
-      <p>Possitive: {props.indDoc.possitive}</p>
-      <p>Negative: {props.indDoc.negative}</p>
-      <p>Neutral: {props.indDoc.neutral}</p>
-      <p>Mixed: {props.indDoc.mixed}</p>
+      <Sentiment {...props.indDoc} />
       {props.indDoc.imgurl && (
         <img className="d-img" alt="Memory-img" src={props.indDoc.imgurl} />
       )}
