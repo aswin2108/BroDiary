@@ -8,6 +8,7 @@ import "./quote.styles.css";
 
 const Quote = () => {
   const quotes = useGetQuote();
+
   if (quotes === "") {
     return <Spinner loading />;
   }

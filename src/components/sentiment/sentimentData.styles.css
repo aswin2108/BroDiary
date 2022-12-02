@@ -1,0 +1,27 @@
+.sentiment-card {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+  padding: 0px 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+.sentiment-genre {
+  display: flex;
+}
+.negative {
+  background-color: #f6bebe;
+  color: rgb(238, 18, 18);
+  border-left: 5px solid rgb(238, 18, 18);
+}
+.positive {
+  background-color: #e1f1e9;
+  color: rgb(38, 192, 138);
+  border-left: 5px solid #26c08a;
+}
+.neutral {
+  background-color: #fff9ee;
+  color: rgb(196, 148, 37);
+  border-left: 5px solid #f8c25e;
+}
