@@ -1,36 +1,35 @@
-.quoteBox{
-    
-    height: 90vh;
-     display: flex; 
-    justify-content: center;
-    position: relative;
+.quoteBox {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
-.quote{
+.quote {
   width: 60%;
-    font-size: x-large;
-    color: black;
-    font-family: 'Brawler', serif;
-    align-self: center;
-    justify-content: center;
-  }
-.author{
-  align-self:flex-end;
+  font-size: x-large;
+  color: black;
+  font-family: "Brawler", serif;
+  align-self: center;
+  justify-content: center;
+}
+.author {
+  align-self: flex-end;
 }
 
-@media (max-width:450px){
-  .quoteBox{
+@media (max-width: 450px) {
+  .quoteBox {
     flex-direction: column;
     justify-content: center;
     margin-left: 10px;
     margin-right: 10px;
   }
-  .quote{
+  .quote {
     font-size: small;
     height: auto;
     width: 100%;
     text-align: center;
-    }
-  .author{
+  }
+  .author {
     align-self: center;
     font-size: small;
   }

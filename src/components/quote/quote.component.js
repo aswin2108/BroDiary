@@ -4,27 +4,24 @@ import useGetQuote from "../../Hooks/useFetchQuote";
 
 import Spinner from "../spinner/spinner.component";
 
-import './quote.styles.css';
+import "./quote.styles.css";
 
-const Quote=()=>{
+const Quote = () => {
+  const quotes = useGetQuote();
+  if (quotes === "") {
+    return <Spinner loading />;
+  }
 
-    const quotes=useGetQuote();
-    // quotes.text=`"`+quotes.text+`"`;
-    if(quotes===""){
-      return <Spinner loading/>
-    }
-
-    return(
+  return (
     <div className="quoteBox">
-        <div className="quote">
-          <h1 aria-label="quote">"{quotes.text}"</h1>
-        </div>
-        <div className="author">
-          <h2 aria-label="author">:- {quotes.author}</h2>
-        </div>
-        
-   </div>
-    );
+      <div className="quote">
+        <h1 aria-label="quote">"{quotes.text}"</h1>
+      </div>
+      <div className="author">
+        <h2 aria-label="author">:- {quotes.author}</h2>
+      </div>
+    </div>
+  );
 };
 
 export default Quote;
