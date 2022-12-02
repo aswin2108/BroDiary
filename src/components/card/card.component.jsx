@@ -15,7 +15,9 @@ const Card = (props) => {
         <h3>{props.indDoc.id}</h3>
         <button
           className="delete-history-btn"
-          onClick={() => deleteEntryTest(props.indDoc.id)}
+          onClick={() => {
+            deleteEntryTest(props.indDoc.id);
+          }}
         >
           Delete
         </button>

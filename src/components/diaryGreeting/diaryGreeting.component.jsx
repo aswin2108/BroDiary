@@ -6,15 +6,15 @@ import { UserContext } from "../../contexts/user.context";
 import Spinner from "../spinner/spinner.component";
 
 const Greeting = () => {
-  const { currentUser, isUserContextLoading } = useContext(UserContext);
+  const { currentUser, isLoading } = useContext(UserContext);
 
-  if (isUserContextLoading) {
-    return <Spinner loading={isUserContextLoading} />;
+  if (isLoading) {
+    return <Spinner loading={isLoading} />;
   }
 
   return (
     <div>
-      {!isUserContextLoading && currentUser.displayName ? (
+      {!isLoading && currentUser.displayName ? (
         <h2>
           Hi {currentUser.displayName}👋🏻 share your day, we'll keep it safe!
         </h2>
