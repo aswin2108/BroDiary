@@ -7,18 +7,29 @@ import DiaryPage from "./pages/diarypage/diary.component";
 import HistoryPage from "./pages/historypage/historyPage.component";
 
 import "./App.css";
+import { createContext, useState } from "react";
+
+export const ThemeContext = createContext(null);
 
 const App = () => {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === "light" ? "dark" : "light"));
+  };
+
   return (
-    <div>
-      <Header />
-      <Routes>
-        <Route index path="/" element={<HomePage />} />
-        <Route path="/auth" element={<Authentication />} />
-        <Route path="/diary" element={<DiaryPage />} />
-        <Route path="/diary/history" element={<HistoryPage />} />
-      </Routes>
-    </div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="App" id={theme}>
+        <Header />
+        <Routes>
+          <Route index path="/" element={<HomePage />} />
+          <Route path="/auth" element={<Authentication />} />
+          <Route path="/diary" element={<DiaryPage />} />
+          <Route path="/diary/history" element={<HistoryPage />} />
+        </Routes>
+      </div>
+    </ThemeContext.Provider>
   );
 };
 

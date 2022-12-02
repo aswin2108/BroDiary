@@ -22,16 +22,24 @@
     color: black;
     border: 1px solid black;
   }
+  #light &:hover {
+    background-color: antiquewhite;
+  }
 
   &.google-sign-in {
     background-color: #4285f4;
     color: white;
 
-    &:hover {
+    #light &:hover {
       background-color: #357ae8;
       border: none;
     }
   }
+  // #light .button-container {
+  //   &:hover {
+
+  //   }
+  // }
 
   &.smallInverted {
     background-color: white;
@@ -51,6 +59,7 @@
       border: none;
     }
   }
+
   @media (min-width: 768px) {
     .button-container {
       font-size: 1.125rem;

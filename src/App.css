@@ -1,0 +1,9 @@
+.App {
+  transition: all 2s;
+}
+#dark {
+  background-color: blue;
+}
+#light {
+  background-color: #f5ebe0;
+}

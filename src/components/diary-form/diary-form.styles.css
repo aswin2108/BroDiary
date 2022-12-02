@@ -2,6 +2,7 @@
   padding-left: 10%;
   padding-top: 5%;
   width: 75%;
+  height: 89.4vh;
 }
 .diary-title {
   display: flex;
@@ -30,19 +31,31 @@
     0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
 }
-.history-button:hover {
+#light .history-button:hover {
   color: #fff;
   background-color: #1a1a1a;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
+#light .history-button {
+  background-color: #f7dfc5;
+}
 .dateField {
   width: 150px;
   padding-bottom: 1px;
+  border-radius: 5px;
+}
+#light .dateField {
+  background-color: #f7dfc5;
 }
 .entryField {
   width: 100%;
   margin-top: 10px;
+  border-radius: 10px;
+  border: solid 2px;
+}
+#light .entryField {
+  background-color: #f7dfc5;
 }
 .image-entry {
   padding-top: 5px;

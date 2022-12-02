@@ -26,6 +26,11 @@
 .DL-cont {
   padding: 25px;
 }
+.theme-toggle {
+  padding: 25px;
+  font-size: larger;
+  font-weight: 700;
+}
 
 @media (max-width: 450px) {
   .navigation {
@@ -47,4 +52,14 @@
     padding-top: 15px;
     padding-bottom: 1px;
   }
+}
+#dark .logo-link {
+  color: #975c8d;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+#light .logo-link {
+  color: white;
+  text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000,
+    5px 5px 0 #000;
 }

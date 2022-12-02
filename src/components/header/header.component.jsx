@@ -4,14 +4,20 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../firebase/firebase.utils";
 
+import { ThemeContext } from "../../App";
+
 import "./header.styles.css";
 
 const Header = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div className="navigation">
       <Link className="logo-link" to="/">
         BroDiary📖
       </Link>
+      <label onClick={toggleTheme} className="theme-toggle">
+        {theme === "light" ? "Dark Mode" : "Light Mode"}
+      </label>
       <ShowLinks />
     </div>
   );
