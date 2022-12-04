@@ -1,21 +1,50 @@
 .card-container {
   width: 60%;
   padding: 5px;
-  border: 2px solid black;
+
   border-radius: 10px;
   margin: 5px;
+  transition: border 1s linear;
+}
+#light .card-container {
+  border: 2px solid black;
+}
+#dark .card-container {
+  border: 2px solid gold;
 }
 .history-card-header {
   display: flex;
   justify-content: space-between;
 }
+.card-date {
+  font-family: "Solway", serif;
+  font-weight: 700;
+  transition: color 1s linear;
+}
+#light .card-date {
+  color: black;
+}
+#dark .card-date {
+  color: white;
+}
+.card-entry {
+  font-family: "Solway", serif;
+  font-size: medium;
+  transition: color 1s linear;
+}
+#light .card-entry {
+  color: black;
+}
+#dark .card-entry {
+  color: white;
+}
 .delete-history-btn {
   appearance: none;
   background-color: transparent;
-  border: 2px solid #1a1a1a;
+
   border-radius: 15px;
   box-sizing: border-box;
-  color: #3b3b3b;
+
   cursor: pointer;
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
@@ -25,19 +54,23 @@
   line-height: normal;
   margin-right: 10px;
   margin-top: 15px;
-  /* min-height: 60px; */
-  /* min-width: 0; */
   outline: none;
-  /* padding: 16px 24px; */
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  /* width: 10%; */
   height: 35px;
   will-change: transform;
+}
+#light .delete-history-btn {
+  border: 2px solid #1a1a1a;
+  color: #3b3b3b;
+}
+#dark .delete-history-btn {
+  border: 2px solid white;
+  color: white;
 }
 .d-img {
   width: 55%;
@@ -48,10 +81,17 @@
   pointer-events: none;
 }
 
-.delete-history-btn:hover {
+#light .delete-history-btn:hover {
   color: #fff;
   background-color: #1a1a1a;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+#dark .delete-history-btn:hover {
+  color: black;
+  background-color: gold;
+  border-color: gold;
+  box-shadow: rgba(255, 255, 255, 0.608) 0 8px 15px;
   transform: translateY(-2px);
 }
 

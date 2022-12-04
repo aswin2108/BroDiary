@@ -1,10 +1,27 @@
-.sign-up-container {
+.sign-in-container {
   display: flex;
   flex-direction: column;
   width: 380px;
 }
-.sign-up-title {
+.sign-in-title {
   margin: 10px 0;
+  transition: color 1s ease;
+}
+#light .sign-in-title {
+  color: black;
+}
+#dark .sign-in-title {
+  color: white;
+}
+.sign-in-sub-title {
+  font-size: medium;
+  transition: color 1s ease;
+}
+#light .sign-in-sub-title {
+  color: black;
+}
+#dark .sign-in-sub-title {
+  color: white;
 }
 
 @media (min-width: 768px) {

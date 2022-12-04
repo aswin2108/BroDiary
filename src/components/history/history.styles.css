@@ -4,10 +4,30 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: 90.25vh;
 }
 .empty-list {
   font-size: larger;
   font-weight: 800;
+  transition: color 1s linear;
+}
+#light .empty-list {
+  color: black;
+}
+#dark .empty-list {
+  color: white;
+}
+.history-title {
+  font-weight: 800;
+  transition: color 1s ease, text-shadow 1s ease;
+}
+#light .history-title {
+  color: black;
+}
+#dark .history-title {
+  color: black;
+  text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
+    1px 1px 0 gold;
 }
 
 @media (max-width: 450px) {

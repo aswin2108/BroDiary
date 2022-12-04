@@ -16,6 +16,11 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  border: 1px solid white;
+
+  #dark {
+    border-color: white;
+  }
 
   &:hover {
     background-color: white;
@@ -24,6 +29,10 @@
   }
   #light &:hover {
     background-color: antiquewhite;
+  }
+  #dark &:hover {
+    background-color: rgb(243, 217, 121);
+    color: black;
   }
 
   &.google-sign-in {
@@ -35,11 +44,6 @@
       border: none;
     }
   }
-  // #light .button-container {
-  //   &:hover {
-
-  //   }
-  // }
 
   &.smallInverted {
     background-color: white;
@@ -53,10 +57,13 @@
     font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
     align-items: center;
 
-    &:hover {
+    #dark &:hover {
       background-color: black;
-      color: white;
+      background-color: rgb(243, 217, 121);
       border: none;
+    }
+    #light &:hover {
+      border-color: black;
     }
   }
 

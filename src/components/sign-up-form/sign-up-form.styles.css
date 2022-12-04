@@ -5,6 +5,23 @@
 }
 .sign-up-title {
   margin: 10px 0;
+  transition: color 1s ease;
+}
+#light .sign-up-title {
+  color: black;
+}
+#dark .sign-up-title {
+  color: white;
+}
+.sign-up-sub-title {
+  font-size: medium;
+  transition: color 1s ease;
+}
+#light .sign-up-sub-title {
+  color: black;
+}
+#dark .sign-up-sub-title {
+  color: white;
 }
 
 @media (min-width: 768px) {

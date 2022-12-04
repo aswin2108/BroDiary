@@ -40,26 +40,60 @@
 #light .history-button {
   background-color: #f7dfc5;
 }
+#dark .history-button:hover {
+  color: gold;
+  background-color: rgb(62, 56, 56);
+  box-shadow: rgb(52, 52, 51) 0 8px 15px;
+  transform: translateY(-2px);
+}
+#dark .history-button {
+  background-color: gold;
+}
 .dateField {
   width: 150px;
   padding-bottom: 1px;
   border-radius: 5px;
+  font-family: "Solway", serif;
 }
 #light .dateField {
   background-color: #f7dfc5;
+}
+#dark .dateField {
+  background-color: rgb(255, 238, 144);
+  border: solid gold 2px;
 }
 .entryField {
   width: 100%;
   margin-top: 10px;
   border-radius: 10px;
   border: solid 2px;
+  font-family: "Solway", serif;
+  font-size: medium;
 }
 #light .entryField {
   background-color: #f7dfc5;
 }
+#dark .entryField {
+  background-color: rgb(255, 238, 144);
+  border: solid gold 2px;
+}
 .image-entry {
   padding-top: 5px;
   padding-bottom: 20px;
+  transition: color 1s linear;
+}
+#dark .image-entry {
+  color: gold;
+}
+.no-data {
+  transition: color 1s linear;
+  font-weight: 600;
+}
+#light .no-data {
+  color: black;
+}
+#dark .no-data {
+  color: white;
 }
 
 @media (min-width: 768px) {

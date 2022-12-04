@@ -12,10 +12,10 @@ const History = () => {
   if (isHistoryLoading) {
     return <Spinner loading={isHistoryLoading} />;
   }
-
+  console.log(allDocs);
   return (
     <div className="entry-list">
-      <h2>All your 📝 are here...!</h2>
+      <h2 className="history-title">All your 📝 are here...!</h2>
       {allDocs.length === 0 ? (
         <span className="empty-list">No entries found!</span>
       ) : (

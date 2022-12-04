@@ -5,6 +5,8 @@ import { UserContext } from "../../contexts/user.context";
 
 import Spinner from "../spinner/spinner.component";
 
+import "./diaryGreeting.styles.css";
+
 const Greeting = () => {
   const { currentUser, isUserContextLoading } = useContext(UserContext);
 
@@ -15,7 +17,7 @@ const Greeting = () => {
   return (
     <div>
       {!isUserContextLoading && currentUser.displayName ? (
-        <h2>
+        <h2 className="greeting">
           Hi {currentUser.displayName}👋🏻 share your day, we'll keep it safe!
         </h2>
       ) : (

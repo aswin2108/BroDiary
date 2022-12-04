@@ -1,0 +1,12 @@
+.greeting {
+  font-weight: 800;
+  transition: color 1s ease, text-shadow 1s linear;
+}
+#light .greeting {
+  color: black;
+}
+#dark .greeting {
+  color: black;
+  text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
+    1px 1px 0 gold;
+}

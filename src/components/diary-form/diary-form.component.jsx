@@ -75,7 +75,7 @@ const Diary = () => {
           />
           <textarea
             className="entryField"
-            rows="20"
+            rows="15"
             placeholder="Diary Entry"
             aria-label="entry"
             type="text"
@@ -116,7 +116,7 @@ const Diary = () => {
             {sentimentData ? (
               <CustomButton type="submit">Save</CustomButton>
             ) : (
-              <p>First analyze the entry.</p>
+              <p className="no-data">First analyze the entry.</p>
             )}
           </div>
         </form>
@@ -124,7 +124,7 @@ const Diary = () => {
       {sentimentData ? (
         <Sentiment {...sentimentData.amazon} />
       ) : (
-        <p>Do the analysis to view the result</p>
+        <p className="no-data">Do the analysis to view the result</p>
       )}
     </div>
   );

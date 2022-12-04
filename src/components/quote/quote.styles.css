@@ -7,14 +7,31 @@
 .quote {
   width: 60%;
   font-size: x-large;
-  color: black;
   font-family: "Brawler", serif;
   align-self: center;
   justify-content: center;
+  transition: color 1s ease, text-shadow 1s linear;
+}
+#light .quote {
+  color: black;
+}
+#dark .quote {
+  color: black;
+  text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
+    1px 1px 0 gold;
 }
 .author {
   align-self: flex-end;
   padding-bottom: 5%;
+  transition: color 1s ease, text-shadow 1s linear;
+}
+#light .author {
+  color: black;
+}
+#dark .author {
+  color: black;
+  text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
+    1px 1px 0 gold;
 }
 
 @media (max-width: 450px) {

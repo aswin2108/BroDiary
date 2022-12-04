@@ -9,9 +9,9 @@ const useGetHistory = () => {
   const [allDocs, setAllDocs] = useState([]);
   const [isHistoryLoading, setHistoryLoading] = useState(true);
 
-  const deleteEntryTest = async (docId) => {
+  async function deleteEntryTest(docId) {
     await deleteDoc(doc(db, auth.currentUser.uid, docId));
-  };
+  }
 
   const loadHistory = () => {
     auth.onAuthStateChanged((authObj) => {
