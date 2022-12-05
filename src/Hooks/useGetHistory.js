@@ -10,7 +10,9 @@ const useGetHistory = () => {
   const [isHistoryLoading, setHistoryLoading] = useState(true);
 
   async function deleteEntryTest(docId) {
-    await deleteDoc(doc(db, auth.currentUser.uid, docId));
+    await deleteDoc(doc(db, auth.currentUser.uid, docId)).catch((err) =>
+      console.log(err)
+    );
   }
 
   const loadHistory = () => {
@@ -19,7 +21,9 @@ const useGetHistory = () => {
         (async () => {
           const id = authObj.uid;
           const colRef = collection(db, id);
-          const snapshots = await getDocs(colRef);
+          const snapshots = await getDocs(colRef).catch((error) =>
+            console.log(error)
+          );
           const docs = snapshots.docs.map((doc) => {
             const data = doc.data();
             data.id = doc.id;
