@@ -5,14 +5,16 @@ exports[`Authentication page rendered correctly 1`] = `
   className="authentication-container"
 >
   <div
-    className="sign-up-container"
+    className="sign-in-container"
   >
     <h2
-      className="sign-up-title"
+      className="sign-in-title"
     >
       Already have an account?
     </h2>
-    <span>
+    <span
+      className="sign-in-sub-title"
+    >
       Sign in with your email and password
     </span>
     <form
@@ -58,13 +60,13 @@ exports[`Authentication page rendered correctly 1`] = `
         className="buttons-container"
       >
         <button
-          className="sign-up-button"
+          className="button-container undefined"
           type="submit"
         >
           Sign In
         </button>
         <button
-          className="sign-up-button"
+          className="button-container google-sign-in"
           onClick={[Function]}
           type="button"
         >
@@ -81,7 +83,9 @@ exports[`Authentication page rendered correctly 1`] = `
     >
       Don't have an account?
     </h2>
-    <span>
+    <span
+      className="sign-up-sub-title"
+    >
       Sign up with your email and password
     </span>
     <form
@@ -160,7 +164,7 @@ exports[`Authentication page rendered correctly 1`] = `
         </label>
       </div>
       <button
-        className="sign-up-button"
+        className="button-container undefined"
         type="submit"
       >
         Sign Up

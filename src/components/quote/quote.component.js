@@ -7,7 +7,7 @@ import Spinner from "../spinner/spinner.component";
 import "./quote.styles.css";
 
 const Quote = () => {
-  const quotes = useGetQuote();
+  const {quotes} = useGetQuote();
 
   if (quotes === "") {
     return <Spinner loading />;
@@ -15,7 +15,7 @@ const Quote = () => {
 
   return (
     <div className="quoteBox">
-      <div className="quote">
+      <div className="quote-container">
         <h1 aria-label="quote">"{quotes.text}"</h1>
       </div>
       <div className="author">

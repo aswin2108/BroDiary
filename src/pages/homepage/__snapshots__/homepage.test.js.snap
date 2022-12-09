@@ -2,36 +2,120 @@
 
 exports[`Home page rendered correctly 1`] = `
 <div
-  className="quoteBox"
+  style={
+    Object {
+      "left": "50%",
+      "position": "fixed",
+      "top": "50%",
+      "transform": "translate(-50%, -50%)",
+    }
+  }
 >
-  <div
-    className="quote"
+  <span
+    style={
+      Object {
+        "display": "inherit",
+        "height": "100px",
+        "position": "relative",
+        "width": "100px",
+      }
+    }
   >
-    <h1
-      aria-label="quote"
-    >
-      "
-      "
-    </h1>
-  </div>
-  <div
-    className="author"
-  >
-    <h2
-      aria-label="author"
-    >
-      :- 
-    </h2>
-  </div>
-  <div
-    className="quote-button-cont"
-  >
-    <button
-      className="quote-button"
-      onClick={[Function]}
-    >
-      next
-    </button>
-  </div>
+    <span
+      style={
+        Object {
+          "animation": "react-spinners-CircleLoader-circle 1s 0s infinite linear",
+          "animationFillMode": "",
+          "borderBottom": "none",
+          "borderLeft": "1px solid #000000",
+          "borderRadius": "100%",
+          "borderRight": "none",
+          "borderTop": "1px solid #000000",
+          "height": "100px",
+          "left": "0%",
+          "position": "absolute",
+          "top": "0%",
+          "transition": "2s",
+          "width": "100px",
+        }
+      }
+    />
+    <span
+      style={
+        Object {
+          "animation": "react-spinners-CircleLoader-circle 1s 0.2s infinite linear",
+          "animationFillMode": "",
+          "borderBottom": "none",
+          "borderLeft": "1px solid #000000",
+          "borderRadius": "100%",
+          "borderRight": "none",
+          "borderTop": "1px solid #000000",
+          "height": "90px",
+          "left": "0.875%",
+          "position": "absolute",
+          "top": "1.75%",
+          "transition": "2s",
+          "width": "90px",
+        }
+      }
+    />
+    <span
+      style={
+        Object {
+          "animation": "react-spinners-CircleLoader-circle 1s 0.4s infinite linear",
+          "animationFillMode": "",
+          "borderBottom": "none",
+          "borderLeft": "1px solid #000000",
+          "borderRadius": "100%",
+          "borderRight": "none",
+          "borderTop": "1px solid #000000",
+          "height": "80px",
+          "left": "1.75%",
+          "position": "absolute",
+          "top": "3.5%",
+          "transition": "2s",
+          "width": "80px",
+        }
+      }
+    />
+    <span
+      style={
+        Object {
+          "animation": "react-spinners-CircleLoader-circle 1s 0.6000000000000001s infinite linear",
+          "animationFillMode": "",
+          "borderBottom": "none",
+          "borderLeft": "1px solid #000000",
+          "borderRadius": "100%",
+          "borderRight": "none",
+          "borderTop": "1px solid #000000",
+          "height": "70px",
+          "left": "2.6249999999999996%",
+          "position": "absolute",
+          "top": "5.249999999999999%",
+          "transition": "2s",
+          "width": "70px",
+        }
+      }
+    />
+    <span
+      style={
+        Object {
+          "animation": "react-spinners-CircleLoader-circle 1s 0.8s infinite linear",
+          "animationFillMode": "",
+          "borderBottom": "none",
+          "borderLeft": "1px solid #000000",
+          "borderRadius": "100%",
+          "borderRight": "none",
+          "borderTop": "1px solid #000000",
+          "height": "60px",
+          "left": "3.5%",
+          "position": "absolute",
+          "top": "7%",
+          "transition": "2s",
+          "width": "60px",
+        }
+      }
+    />
+  </span>
 </div>
 `;

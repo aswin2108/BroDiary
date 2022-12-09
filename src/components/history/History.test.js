@@ -7,10 +7,7 @@ it('Card  rendered correctly', ()=>{
         {
             id: 2022-10-24,
             entry: 'I enjoying coding',
-            possitive: 0.951200125,
-            negative: 0.000000005,
-            neutral: 0.000001462,
-            mixed: 0.1500069
+            possitive: 0.951200125
         }
     ];
     const cardComp=renderer.create(

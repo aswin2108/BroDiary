@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useFetchQuote = () => {
-  const [quote, setQuote] = useState("");
+  const [quotes, setQuote] = useState("");
   const getQuote = async () => {
     await fetch("https://type.fit/api/quotes")
       .then((res) => res.json())
@@ -14,7 +14,7 @@ const useFetchQuote = () => {
   useEffect(() => {
     getQuote();
   }, []);
-  return quote;
+  return {quotes, getQuote};
 };
 
 export default useFetchQuote;

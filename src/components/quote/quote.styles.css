@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
 }
-.quote {
+.quote-container {
   width: 60%;
   font-size: x-large;
   font-family: "Brawler", serif;
@@ -12,10 +12,10 @@
   justify-content: center;
   transition: color 1s ease, text-shadow 1s linear;
 }
-#light .quote {
+#light .quote-container {
   color: black;
 }
-#dark .quote {
+#dark .quote-container {
   color: black;
   text-shadow: -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
     1px 1px 0 gold;
@@ -42,7 +42,7 @@
     margin-right: 10px;
     height: 100vh;
   }
-  .quote {
+  .quote-container {
     font-size: small;
     height: auto;
     width: 100%;
