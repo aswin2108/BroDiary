@@ -33,7 +33,7 @@ function ShowLinks() {
             DIARY
           </Link>
           <Link className="headder-link" to="/" onClick={signOutUser}>
-            SIGN OUT
+            SignOut
           </Link>
         </div>
       ) : (

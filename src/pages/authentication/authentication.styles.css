@@ -6,3 +6,11 @@
   padding-top: 100px;
   height: 86vh;
 }
+@media (max-width: 450px) {
+  .authentication-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+}

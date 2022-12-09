@@ -1,6 +1,5 @@
 import React from "react";
 
-// import { deleteEntryTest } from "../../Helpers/historyUtils";
 import useGetHistory from "../../Hooks/useGetHistory";
 import Sentiment from "../sentiment/sentimentData.component";
 

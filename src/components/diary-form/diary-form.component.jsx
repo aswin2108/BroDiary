@@ -121,11 +121,13 @@ const Diary = () => {
           </div>
         </form>
       </div>
+      <div className="sentiment-container">
       {sentimentData ? (
         <Sentiment {...sentimentData.amazon} />
       ) : (
         <p className="no-data">Do the analysis to view the result</p>
       )}
+      </div>
     </div>
   );
 };

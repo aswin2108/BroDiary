@@ -6,6 +6,7 @@
   margin-top: 10px;
   border-radius: 20px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 .sentiment-genre {
   display: flex;
@@ -24,4 +25,9 @@
   background-color: #fff9ee;
   color: rgb(196, 148, 37);
   border-left: 5px solid #f8c25e;
+}
+@media (max-width: 450px) {
+  .sentiment-card{
+    width: 35%;
+  }
 }

@@ -59,7 +59,7 @@
 
 @media (max-width: 450px) {
   .navigation {
-    font-size: smaller;
+    font-size:x-small;
     justify-content: flex-start;
     margin-bottom: 0px;
   }
@@ -67,22 +67,28 @@
     padding-top: 15px;
     padding-left: 5px;
     padding-right: 2px;
-    /* transition: all 1.5s; */
+    width: fit-content;
+    font-size: large;
   }
   .headder-link {
     padding-top: 15px;
     padding-bottom: 1px;
     height: 20px;
+font-size: small;
   }
   .DL-cont {
     padding-top: 15px;
     padding-bottom: 1px;
+    font-size:x-small;
+    width:33%;
+    
+  }
+  .theme-toggle{
+    font-size: x-small;
   }
 }
 #dark .logo-link {
   color: black;
-  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000; */
   text-shadow: -1px 1px 0 #41ba45, 1px 1px 0 #c63d2b, 1px -1px 0 #42afac,
     -1px -1px 0 #c6c23f;
 }
