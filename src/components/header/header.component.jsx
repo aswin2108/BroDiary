@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../firebase/firebase.utils";
 
+import {Sun, Moon} from "react-feather";
+
 import { ThemeContext } from "../../App";
 
 import "./header.styles.css";
@@ -16,7 +18,7 @@ const Header = () => {
         BroDiary📖
       </Link>
       <label onClick={toggleTheme} className="theme-toggle">
-        {theme === "light" ? "Dark Mode" : "Light Mode"}
+        {theme === "light" ? <Sun color="#E8A317" size={30}/> : <Moon color="#D3D3D3" size={30}/>}
       </label>
       <ShowLinks />
     </div>
@@ -32,6 +34,9 @@ function ShowLinks() {
           <Link className="diary-link" to="/diary">
             DIARY
           </Link>
+          <a className="robo-link" href="https://aswins2108.pythonanywhere.com/">
+            🤖
+          </a>
           <Link className="headder-link" to="/" onClick={signOutUser}>
             SignOut
           </Link>
