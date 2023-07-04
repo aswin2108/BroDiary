@@ -20,8 +20,12 @@
   font-family: "Rubik Microbe", cursive;
   transition: color 1s linear, text-shadow 1s linear;
 }
+.headder-link-sign{
+   padding: 25px;
+   cursor: pointer;
+   transition: color 1s linear;
+}
 .headder-link {
-  /* padding: 25px; */
   cursor: pointer;
   transition: color 1s linear;
 }

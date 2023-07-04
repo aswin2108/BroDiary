@@ -42,7 +42,7 @@ function ShowLinks() {
           </Link>
         </div>
       ) : (
-        <Link className="headder-link" to="/auth">
+        <Link className="headder-link-sign" to="/auth">
           SIGN IN
         </Link>
       )}
