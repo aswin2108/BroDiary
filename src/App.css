@@ -1,5 +1,6 @@
 .App {
   transition: all 1s;
+  height: 100vh;
 }
 #dark {
   background-color: black;

@@ -38,8 +38,8 @@ const useGetHistory = () => {
 
   useEffect(() => {
     loadHistory();
-  }, [allDocs]);
+  }, []);
 
-  return { allDocs, isHistoryLoading, deleteEntryTest };
+  return { allDocs, isHistoryLoading, deleteEntryTest, loadHistory };
 };
 export default useGetHistory;

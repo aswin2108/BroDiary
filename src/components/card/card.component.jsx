@@ -16,6 +16,7 @@ const Card = (props) => {
           className="delete-history-btn"
           onClick={() => {
             deleteEntryTest(props.indDoc.id);
+            window.location.reload();
           }}
         >
           Delete
