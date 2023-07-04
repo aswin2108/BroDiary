@@ -25,6 +25,12 @@
    cursor: pointer;
    transition: color 1s linear;
 }
+#light .headder-link-sign{
+   color: black;
+}
+#dark .headder-link-sign{
+   color: gold;
+}
 .headder-link {
   cursor: pointer;
   transition: color 1s linear;
